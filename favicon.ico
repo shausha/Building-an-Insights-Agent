@@ -1,0 +1,9 @@
+from fastapi import FastAPI
+from fastapi.responses import FileResponse
+import os
+
+app = FastAPI()
+
+@app.get("/favicon.ico")
+async def favicon():
+    return FileResponse(os.path.join(os.getcwd(), "favicon.ico"))
